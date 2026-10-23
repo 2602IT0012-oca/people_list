@@ -3,3 +3,111 @@ Using vips to process variants requires the libvips library. Please install libv
 Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
 Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
 Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='PepoleList'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='PepoleList'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='PepoleList'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-10-23 06:04:02.316945', '2026-10-23 06:04:02.316948') RETURNING "key" /*application='PepoleList'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PepoleList'*/[0m
+Migrating to CreateMembers (20261023060049)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='PepoleList'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "members" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "height" float, "weight" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='PepoleList'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20261023060049') RETURNING "version" /*application='PepoleList'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='PepoleList'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PepoleList'*/[0m
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Started GET "/" for 223.135.182.116 at 2026-10-23 06:04:22 +0000
+Cannot render console from 223.135.182.116! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PepoleList'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rubies/3.4.9/lib/ruby/gems/3.4.0/gems/railties-8.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rubies/3.4.9/lib/ruby/gems/3.4.0/gems/railties-8.1.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 5.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/members" for 223.135.182.116 at 2026-10-23 06:04:58 +0000
+Cannot render console from 223.135.182.116! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT "members".* FROM "members" /*action='index',application='PepoleList',controller='members'*/[0m
+  ↳ app/views/members/index.html.erb:9
+  Rendered members/index.html.erb within layouts/application (Duration: 5.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | GC: 0.0ms)
+Completed 200 OK in 54ms (Views: 21.4ms | ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/members/new" for 223.135.182.116 at 2026-10-23 06:06:15 +0000
+Cannot render console from 223.135.182.116! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by MembersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/new.html.erb within layouts/application
+  Rendered members/_form.html.erb (Duration: 10.1ms | GC: 0.0ms)
+  Rendered members/new.html.erb within layouts/application (Duration: 10.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 14.0ms | ActiveRecord: 1.2ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/members" for 223.135.182.116 at 2026-10-23 06:06:32 +0000
+Cannot render console from 223.135.182.116! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by MembersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "member" => {"name" => "ち", "height" => "234", "weight" => ""}, "commit" => "Create Member"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='PepoleList',controller='members'*/[0m
+  ↳ app/controllers/members_controller.rb:27:in 'block in MembersController#create'
+  [1m[36mMember Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "members" WHERE "members"."name" = 'ち' LIMIT 1 /*action='create',application='PepoleList',controller='members'*/[0m
+  ↳ app/controllers/members_controller.rb:27:in 'block in MembersController#create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*action='create',application='PepoleList',controller='members'*/[0m
+  ↳ app/controllers/members_controller.rb:27:in 'block in MembersController#create'
+  Rendering layout layouts/application.html.erb
+  Rendering members/new.html.erb within layouts/application
+  Rendered members/_form.html.erb (Duration: 3.1ms | GC: 0.0ms)
+  Rendered members/new.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 15ms (Views: 4.7ms | ActiveRecord: 2.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/members" for 223.135.182.116 at 2026-10-23 06:06:35 +0000
+Cannot render console from 223.135.182.116! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by MembersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "member" => {"name" => "ち", "height" => "234", "weight" => "2345"}, "commit" => "Create Member"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='PepoleList',controller='members'*/[0m
+  ↳ app/controllers/members_controller.rb:27:in 'block in MembersController#create'
+  [1m[36mMember Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "members" WHERE "members"."name" = 'ち' LIMIT 1 /*action='create',application='PepoleList',controller='members'*/[0m
+  ↳ app/controllers/members_controller.rb:27:in 'block in MembersController#create'
+  [1m[36mMember Create (0.2ms)[0m  [1m[32mINSERT INTO "members" ("name", "height", "weight", "created_at", "updated_at") VALUES ('ち', 234.0, 2345.0, '2026-10-23 06:06:35.479120', '2026-10-23 06:06:35.479120') RETURNING "id" /*action='create',application='PepoleList',controller='members'*/[0m
+  ↳ app/controllers/members_controller.rb:27:in 'block in MembersController#create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='PepoleList',controller='members'*/[0m
+  ↳ app/controllers/members_controller.rb:27:in 'block in MembersController#create'
+Redirected to https://vigilant-rotary-phone-qvxwv5pg6v426ww5-3000.app.github.dev/members/1
+↳ app/controllers/members_controller.rb:28:in 'block (2 levels) in MembersController#create'
+Completed 302 Found in 12ms (ActiveRecord: 3.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/members/1" for 223.135.182.116 at 2026-10-23 06:06:35 +0000
+Cannot render console from 223.135.182.116! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by MembersController#show as TURBO_STREAM
+  Parameters: {"id" => "1"}
+  [1m[36mMember Load (0.5ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = 1 LIMIT 1 /*action='show',application='PepoleList',controller='members'*/[0m
+  ↳ app/controllers/members_controller.rb:63:in 'MembersController#set_member'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/_member.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered members/show.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 7.1ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/members/1/edit" for 223.135.182.116 at 2026-10-23 06:06:37 +0000
+Cannot render console from 223.135.182.116! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by MembersController#edit as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = 1 LIMIT 1 /*action='edit',application='PepoleList',controller='members'*/[0m
+  ↳ app/controllers/members_controller.rb:63:in 'MembersController#set_member'
+  Rendering layout layouts/application.html.erb
+  Rendering members/edit.html.erb within layouts/application
+  Rendered members/_form.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered members/edit.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+

@@ -27,5 +27,15 @@
 #       "yes": yup
 #       enabled: "ON"
 
+ja:
+  activerecord:
+    models:
+      member: "人物"
+    attributes:
+      member:
+        name: "名前"
+        height: "身長"
+        weight: "体重"
+
 en:
   hello: "Hello world"
